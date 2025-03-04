@@ -9,32 +9,27 @@
 
 public class Solution extends GuessGame {
     public int guessNumber(int n) {
-        if(n==1)
+       int low =1;
+       int high =n;
+
+       while(low<=high)
+       {
+        int guess = low+ (high-low)/2;
+        int result = guess(guess);
+
+        if(result==0)
         {
-            return 1;
+            return guess;
         }
-        int low =1;
-        int high = n;
-
-        while(low<=high)
+        else if(result==-1)
         {
-            int guess=low+(high-low)/2;
-            int result = guess(guess);
-
-            if(result==0)
-            {
-                return guess;
-            }
-            else if(result == -1)
-            {
-                high = guess-1;
-            }
-            else
-            {
-                low = guess+1;
-            }
-        } 
-        return -1;
-  
+            high = guess-1;
+        }
+        else 
+        {
+            low = guess+1;
+        }
+       }
+    return -1;
     }
 }
