@@ -5,18 +5,16 @@ class Solution {
       int num=nums[0];
       for(int i=0;i<n;i++)
       {
-        if(nums[i]==num)
+        if(count==0)
+            num = nums[i];
+        if(nums[i]== num)
         {
             count++;
-
         }
-        else if(nums[i]!=num && count<=1)
-        {
-            num = nums[i];
-        }
-        else
+        else{
             count--;
+        }
       }
-       return num; 
+      return num;
     }
 }
