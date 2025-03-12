@@ -15,16 +15,14 @@
  */
 class Solution {
     public int maxDepth(TreeNode root) {
-        if (root == null) {
+        if(root==null){
             return 0;
         }
-
-        // Recursive call to left and right subtrees
         int leftDepth = maxDepth(root.left);
-        int rightDepth = maxDepth(root.right);
+        int rightDepth= maxDepth(root.right);
 
-        // Return 1 (for current node) + max depth of left/right
-        return 1 + Math.max(leftDepth, rightDepth);
-        
+        int maximum = 1+ Math.max(leftDepth,rightDepth);
+
+     return maximum;
     }
 }
