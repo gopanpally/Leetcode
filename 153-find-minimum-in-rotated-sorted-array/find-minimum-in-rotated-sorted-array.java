@@ -11,6 +11,7 @@ class Solution {
             if(nums[low]<=nums[mid])
             {
                 ans= Math.min(ans, nums[low]);
+                
                 low = mid+1;
             }
             else if(nums[mid]<=nums[high])
