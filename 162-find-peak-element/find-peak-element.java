@@ -16,6 +16,6 @@ class Solution {
         }
 
         // left == right is the peak
-        return left;
+        return right;
     }
 }
